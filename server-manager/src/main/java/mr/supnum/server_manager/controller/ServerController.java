@@ -1,4 +1,4 @@
-package mr.supnum.server_manager.contriller;
+package mr.supnum.server_manager.controller;
 
 import java.util.List;
 import java.util.Map;
