@@ -17,36 +17,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <!-- ===== getServerById ===== -->
-    <xs:element name="getServerRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="id" type="xs:long"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="getServerResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="server" type="tns:server" minOccurs="0"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- ===== getAllServers ===== -->
-    <xs:element name="getAllServersRequest" type="xs:anyType"/>
-
-    <xs:element name="getAllServersResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="servers" type="tns:server"
-                            maxOccurs="unbounded" minOccurs="0"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- ===== createServer ===== -->
+    <!-- ===== 1) CreateServer ===== -->
     <xs:element name="createServerRequest">
         <xs:complexType>
             <xs:sequence>
@@ -64,7 +35,89 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- ===== deleteServer ===== -->
+    <!-- ===== 2) GetAllServers ===== -->
+    <xs:element name="getAllServersRequest" type="xs:anyType"/>
+
+    <xs:element name="getAllServersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="servers" type="tns:server"
+                            maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ===== 3) RenameServer ===== -->
+    <xs:element name="renameServerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="newName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="renameServerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="server" type="tns:server"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ===== 4) GetServerStatus ===== -->
+    <xs:element name="getServerStatusRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getServerStatusResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="running" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ===== 5) StartServer ===== -->
+    <xs:element name="startServerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="startServerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="server" type="tns:server"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ===== 6) StopServer ===== -->
+    <xs:element name="stopServerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="stopServerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="server" type="tns:server"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ===== 7) DeleteServer ===== -->
     <xs:element name="deleteServerRequest">
         <xs:complexType>
             <xs:sequence>
@@ -80,5 +133,4 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
 </xs:schema>
