@@ -17,8 +17,8 @@ import org.springframework.core.io.ClassPathResource;
 public class WebServiceConfig extends WsConfigurerAdapter {
 
     @Bean
-    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(
-            ApplicationContext applicationContext) {
+    public ServletRegistrationBean<MessageDispatcherServlet> 
+    messageDispatcherServlet(ApplicationContext applicationContext) {
 
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
