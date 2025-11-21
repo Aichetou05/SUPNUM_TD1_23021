@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://supnum.ma/servers"
+           xmlns:tns="http://supnum.ma/servers"
+           elementFormDefault="qualified">
+
+    <!-- Type Server -->
+    <xs:complexType name="server">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long" minOccurs="0"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="ipAddress" type="xs:string"/>
+            <xs:element name="status" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- createServer -->
+    <xs:element name="createServerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="ipAddress" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createServerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="server" type="tns:server"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- listServers -->
+    <xs:element name="listServersRequest" type="xs:anyType"/>
+
+    <xs:element name="listServersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="servers" type="tns:server" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Tu peux continuer : startServerRequest, stopServerRequest, etc. -->
+</xs:schema>
