@@ -1,8 +1,12 @@
-mr\supnum\server_manager\wsdl\CreateServerResponse.class
 mr\supnum\server_manager\wsdl\Server.class
-mr\supnum\server_manager\wsdl\ListServersResponse.class
 mr\supnum\server_manager\entities\Server.class
-mr\supnum\server_manager\wsdl\CreateServerRequest.class
 mr\supnum\server_manager\wsdl\ObjectFactory.class
 mr\supnum\server_manager\ServerManagerApplication.class
+mr\supnum\server_manager\wsdl\CreateServerResponse.class
+mr\supnum\server_manager\wsdl\GetAllServersResponse.class
+mr\supnum\server_manager\wsdl\DeleteServerRequest.class
+mr\supnum\server_manager\wsdl\CreateServerRequest.class
+mr\supnum\server_manager\wsdl\DeleteServerResponse.class
+mr\supnum\server_manager\wsdl\GetServerRequest.class
 mr\supnum\server_manager\wsdl\package-info.class
+mr\supnum\server_manager\wsdl\GetServerResponse.class
