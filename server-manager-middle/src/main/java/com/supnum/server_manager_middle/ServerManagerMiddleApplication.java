@@ -2,8 +2,10 @@ package com.supnum.server_manager_middle;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableFeignClients(basePackages = "com.supnum.server_manager_middle.clients")
 public class ServerManagerMiddleApplication {
 
 	public static void main(String[] args) {
